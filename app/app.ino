@@ -3,7 +3,7 @@
 
 #define TRIGGER_PIN  5  // Arduino pin tied to trigger pin on the ultrasonic sensor.
 #define ECHO_PIN     2  // Arduino pin tied to echo pin on the ultrasonic sensor.
-#define MAX_DISTANCE 250 // Maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500cm.
+#define MAX_DISTANCE 400 // Maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500cm.
 #define VIBRATION_MOTOR_PIN 8
 
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
@@ -29,22 +29,22 @@ void loop() {
 
   int vibrationsDelay = 10;
 
-  if (distanceCM > 200){
+  if (distanceCM > 350){
     vibrationsDelay = 1000;
   }
-  else if(distanceCM > 100){
+  else if(distanceCM > 250){
     vibrationsDelay = 500;
   }
-  else if(distanceCM > 50){
+  else if(distanceCM > 100){
     vibrationsDelay = 250;
   }
-  else if(distanceCM > 25){
+  else if(distanceCM > 50){
     vibrationsDelay = 100;
   }
-  else if(distanceCM > 10){
+  else if(distanceCM > 25){
     vibrationsDelay = 50;
   }
-  else if(distanceCM > 5){
+  else if(distanceCM > 10){
     vibrationsDelay = 25;
   }
   else{
